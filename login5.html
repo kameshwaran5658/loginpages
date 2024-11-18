@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #181717, #555657);
+            overflow: hidden;
+        }
+
+        .container {
+            background: #fefefe;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .panda-head {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .panda-head::before,
+        .panda-head::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+        }
+
+        .panda-head::before {
+            left: -25px;
+        }
+
+        .panda-head::after {
+            right: -25px;
+        }
+
+        .panda-face {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .panda-face.left {
+            top: 45%;
+            left: 35%;
+        }
+
+        .panda-face.right {
+            top: 45%;
+            left: 65%;
+        }
+
+        .panda-nose {
+            width: 20px;
+            height: 10px;
+            background: #000;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+
+        h2 {
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            font-size: 16px;
+            border: 2px solid #45454693;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #2d3436;
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #636e72;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background: #2d3436;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #636e72;
+        }
+
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #636e72;
+        }
+
+        .signup-link a {
+            color: #2d3436;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Panda Illustration -->
+        <div class="panda-head">
+            <div class="panda-face left"></div>
+            <div class="panda-face right"></div>
+            <div class="panda-nose"></div>
+        </div>
+
+        <h2>Welcome Back!</h2>
+        <form>
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="signup-link">
+                New here? <a href="#">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

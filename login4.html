@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1d1f20, #373a47);
+            overflow: hidden;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        /* Bubble Animation */
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .bubbles span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+            bottom: -50px;
+        }
+
+        .bubbles span:nth-child(odd) {
+            width: 40px;
+            height: 40px;
+            animation-duration: 8s;
+        }
+
+        .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .bubbles span:nth-child(3) { left: 25%; animation-delay: 4s; }
+        .bubbles span:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .bubbles span:nth-child(5) { left: 55%; animation-delay: 8s; }
+        .bubbles span:nth-child(6) { left: 70%; animation-delay: 10s; }
+        .bubbles span:nth-child(7) { left: 80%; animation-delay: 12s; }
+        .bubbles span:nth-child(8) { left: 90%; animation-delay: 14s; }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+
+        .container {
+            position: relative;
+            width: 350px;
+            background: #2e323b;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            font-size: 16px;
+            background: #373a47;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .form-group input::placeholder {
+            color: #bbb;
+        }
+
+        .form-group input:focus {
+            border-color: #ef32d9;
+            background: #444857;
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #ef32d9;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #ef32d9, #89fffd);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #89fffd, #ef32d9);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .signup-link a {
+            color: #89fffd;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Bubble Background -->
+    <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="signup-link">
+                Don’t have an account? <a href="#">Sign up</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
